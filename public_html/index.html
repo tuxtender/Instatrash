@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Instatrash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/modal_move.css">
+    <link rel="stylesheet" href="styles/modal_new_folder.css">
+    <link rel="stylesheet" href="styles/modal_viewer.css">
+    <link rel="stylesheet" href="styles/authentification.css">
+    <link rel="stylesheet" href="styles/menu.css">
+   
+
+  </head>
+
+  <body >
+              
+    <ul id="menu">
+		<li id="more" class="menu menu0"><div ><img src="images/menu.svg" alt="menu" height="15" width="15"></div></li>
+		<li id="add" class="menu menu0"><div ><img src="images/plus.svg" alt="add" height="15" width="15"></div></li>
+		
+		<li id="back"  class="menu menu1 menu2"><div ><img src="images/abort.svg" alt="back" height="15" width="15"></div></li>
+		<li id="upload"  class="menu menu1"><div ><img src="images/upload.svg" alt="upload" height="15" width="15"></div></li>
+		<li id="new-directory"  class="menu menu1"><div ><img src="images/add_folder.svg" alt="add_folder" height="15" width="15"></div></li>
+	
+		<li id="download" class="menu menu2"><div ><img src="images/download.svg" alt="download" height="15" width="15"></div></li>
+		<li id="delete"  class="menu menu2"><div ><img src="images/remove.svg" alt="delete" height="15" width="15"></div></li>
+		<li id="move" class="menu menu2" ><div><img src="images/move.svg" alt="move_to" height="15" width="15"></div></li>
+
+<!--
+		<li id="share"  class="menu menu2"><div  ><img src="images/share.svg" alt="share" height="15" width="15"></div></li>
+-->			
+		
+		<li id="nav_bar" ></li> 
+
+    </ul>
+    
+    
+    <form class='center' name="authentication"> 
+        <div class="grid-container">
+            <div class="item1">
+                <label for="login">Login:</label>
+            </div>
+            <div class="item2">
+                <input id="login" type="text" name="login" value=""><br/>
+            </div>
+            <div class="item3">
+                <label for="password">Password:</label>
+            </div>
+            <div class="item4">
+                <input  id="password" type="password" name="password" ><br/>
+            </div>
+            <div class="item5">
+                <input id="authenticate" type="button" value="Log in">
+            </div>    
+        </div>
+    </form> 
+    
+    <div id="gallery"></div>  
+              
+    <div id="modal_id" class="modal" >
+       
+			<a class="download_modal" download>
+				<span class="material-icons glow">file_download</span>
+			</a>
+		   
+			<span class="close">&times;</span>
+			
+		    <div class="modal-content">
+				
+				
+				<img id="modal_image">
+								
+				
+				<div id="meta_window" >
+					<div id="file_info"></div>
+					<div id="comments" class="comment_area"></div>
+					
+					<div class="comment_compose_area">
+						<form id='commentForm' action="" name="cForm" method="">
+							<textarea id="" form='commentForm' class="text" name="comment"></textarea>
+							<input type="submit" value="Comment" class="">
+						</form>
+					</div>
+				</div>
+				<div class='modal_menu'> menu </div>
+				
+				 <!-- Next/previous controls -->
+			<a class="prev" >&#10094;</a>
+			<a class="next" >&#10095;</a>
+				
+		    </div>
+			
+			
+			<!-- TODO: add comments and photo information -->
+       
+    </div>
+    
+    <!-- The Modal create new directory -->
+	<div id="newDirModal" class="dirModal">
+
+	  <!-- Modal content -->
+	  <div class="newDirModal-content">
+		<dir class="newDirModal-header">New folder</dir> 
+		
+		<form class="newDirForm" name="newDirForm" method="POST" action="">
+		 <!-- <label for="newDir_textarea"> New directory:</label><br> -->
+		  <input type="text" id="newDir_textarea" name="new_directory" value=""><br>
+		  <!--<input type="submit" value="Create"> -->
+		</form> 
+
+		<div class="newDirModal-close" >Cancel</div>
+        <div class="newDirModal-accept">Create</div>
+
+	  </div>
+
+	</div>
+
+
+	<div id="moveModal" class="moveModal">
+
+	  <div id="moveModal_container">
+		<div class="moveModal_header_current_folder">
+			<div id="moveModal_back">
+				<img src="images/back.svg" alt="back" height="30" width="30">
+			</div>
+			<div id="moveModal_currentDir"></div> 
+		</div>
+		
+		<div id="moveModal_currentDir_content"></div>
+		<div id="moveModal_close" >Cancel</div>
+        <div id="moveModal_accept">Move here</div>
+
+	  </div>
+
+	</div>
+   
+    
+    <div id="info_popup" class="fixed">
+		<input type="file"  id="file_input" class="inputfile" data-multiple-caption="{count} items" multiple/>
+		<div id="counter"></div>
+		<div id="abort" ><img src="images/abort_red.svg" alt="abort" height="35" width="35"></div>
+        <div id="accept"><img src="images/accept.svg" alt="confirm" height="35" width="35"></div>
+    </div>
+   
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/upload.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/download.js"></script>
+    <script src="scripts/select.js"></script>
+    <script src="scripts/share.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/remove.js"></script>
+    <script src="scripts/move.js"></script>
+
+
+  </body>
+</html>
+
